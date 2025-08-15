@@ -100,7 +100,7 @@ numeric_data = filtered_data.select_dtypes(include=[np.number])
 corr_matrix = numeric_data.corr()
 
 # Plot heatmap
-fig, ax = plt.subplots(figsize=(12, 10))
+fig, ax = plt.subplots(figsize=(10,6))
 sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm', ax=ax)
 ax.set_title('Feature Correlation Heatmap')
 plt.xticks(rotation=45)
@@ -121,7 +121,7 @@ selected_features = st.multiselect(
 if selected_features:
     # Distribution plots
     st.subheader("Feature Distributions")
-    fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+    fig, axes = plt.subplots(2, 2, figsize=(12, 9))
     axes = axes.flatten()
     
     for i, col in enumerate(selected_features):
@@ -182,7 +182,7 @@ if 'GDP' in filtered_data.columns and 'Status' in filtered_data.columns:
 # Temporal trends
 st.header("Temporal Trends")
 if 'Year' in filtered_data.columns:
-    fig, ax = plt.subplots(figsize=(12, 6))
+    fig, ax = plt.subplots(figsize=(10, 6))
     sns.lineplot(x='Year', y='Life expectancy', hue='Status', data=filtered_data, ax=ax)
     ax.set_title('Life Expectancy Trends Over Time')
     st.pyplot(fig)
@@ -200,7 +200,7 @@ selected_columns = st.multiselect(
 )
 
 if selected_columns:
-    fig, ax = plt.subplots(figsize=(15, 8))
+    fig, ax = plt.subplots(figsize=(10, 6))
     sns.boxplot(data=filtered_data[selected_columns], ax=ax)
     ax.tick_params(axis='x', rotation=45)
     ax.set_title('Boxplot of Selected Numerical Variables')
