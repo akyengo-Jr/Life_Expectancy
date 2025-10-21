@@ -60,12 +60,12 @@ pip install pandas numpy matplotlib seaborn scikit-learn
    - Normalize features.
 
 3. **Modeling:**
-   - Implement linear regression from scratch (gradient descent).
+   - Implement linear regression from scratch (gradient descent) This is the hard part of the project.
    - Train and evaluate both custom and scikit-learn models.
    - Compare model coefficients and prediction performance.
 
 4. **Visualization:**
-   - Plot training loss curve for the custom model.
+   - Plot training loss curve for the custom model (This is very hard to understand sometimes).
    - Visualize predictions vs. true values for both models.
 
 ---
@@ -81,7 +81,6 @@ Accurate life expectancy prediction helps:
 
 ## License
 
-MIT (or specify your license)
 
 ---
 
