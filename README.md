@@ -65,7 +65,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn
    - Compare model coefficients and prediction performance.
 
 4. **Visualization:**
-   - Plot training loss curve for the custom model (This is very hard to understand sometimes).
+   - Plot training loss curve for the custom model (This is very hard to understand somet imes).
    - Visualize predictions vs. true values for both models.
 
 ---
