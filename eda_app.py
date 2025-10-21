@@ -100,10 +100,10 @@ numeric_data = filtered_data.select_dtypes(include=[np.number])
 corr_matrix = numeric_data.corr()
 
 # Plot heatmap
-fig, ax = plt.subplots(figsize=(10,6))
+fig, ax = plt.subplots(figsize=(20,10))
 sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm', ax=ax)
 ax.set_title('Feature Correlation Heatmap')
-plt.xticks(rotation=45)
+plt.xticks(rotation=80)
 plt.yticks(rotation=0)
 st.pyplot(fig)
 
@@ -120,13 +120,31 @@ selected_features = st.multiselect(
 
 if selected_features:
     # Distribution plots
-    st.subheader("Feature Distributions")
-    fig, axes = plt.subplots(2, 2, figsize=(12, 9))
+    st.subheader("Feature Distributions (Absolute values)")
+    fig, axes = plt.subplots(2, 2, figsize=(20, 10))
     axes = axes.flatten()
     
     for i, col in enumerate(selected_features):
         if i < 4:  # Only plot up to 4 features
-            sns.histplot(filtered_data[col], kde=True, ax=axes[i])
+            sns.histplot(np.abs(filtered_data[col]), kde=True, ax=axes[i])
+            axes[i].set_title(f'Distribution of {col}')
+    
+    # Hide unused subplots
+    for j in range(len(selected_features), 4):
+        axes[j].set_visible(False)
+        
+    plt.tight_layout()
+    st.pyplot(fig)
+
+if selected_features:
+    # Distribution plots
+    st.subheader("Feature Distributions (in Square roots)")
+    fig, axes = plt.subplots(2, 2, figsize=(20, 10))
+    axes = axes.flatten()
+    
+    for i, col in enumerate(selected_features):
+        if i < 4:  # Only plot up to 4 features
+            sns.histplot(np.sqrt(filtered_data[col]), kde=True, ax=axes[i])
             axes[i].set_title(f'Distribution of {col}')
     
     # Hide unused subplots
@@ -139,12 +157,12 @@ if selected_features:
 # Country status analysis
 st.header("Country Status Analysis")
 if 'Status' in filtered_data.columns:
-    status_counts = filtered_data['Status'].value_counts(normalize=True)
+    status_counts = filtered_data['Status'].value_counts(normalize=True) * 100
     st.subheader("Country Status Distribution")
     st.write(status_counts)
     
     # Plot status distribution
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(10, 6))
     sns.countplot(x='Status', data=filtered_data, ax=ax)
     ax.set_title('Distribution of Country Status')
     ax.set_xticks([0, 1])
