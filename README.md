@@ -100,7 +100,6 @@ I spent a lot of time just looking at the data and making graphs. Here's what st
 I wanted to make something non-technical people could use:
 
 - **Explore the Data:** Pick countries, years, and variables to see custom graphs
-- **Make Predictions:** Slide bars to change things like healthcare spending or immunization rates and see how life expectancy changes instantly
 - **Compare Countries:** See two countries side by side
 - **Download Stuff:** Save graphs or prediction (I plan to add this later on) results if you want
 
