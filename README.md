@@ -16,9 +16,9 @@ This is my project where I explore the "Life Expectancy Data.csv" dataset to und
 
 ## What's in This Project
 
-- **data_wrangling.ipynb**: notebook where I did all the data cleaning preparing it for the EDA process
-- **life_expectancy_dashboard.py**: The Streamlit app code (run this to launch the dashboard)
-- **Life Expectancy Data.csv**: The dataset from WHO (you'll need to add this yourself)
+- **data_wrangling.ipynb and exploratory_analysis.ipynb**: notebooks where I did all the data cleaning preparing it for the EDA process
+- **eda_app.py**: The Streamlit app code (run this to launch the dashboard)
+- **Life Expectancy Data.csv**: The dataset from WHO (you'll need to add this yourself in the data wrangling notebook to clean it)
 - **requirements.txt**: List of packages you need to install
 
 ---
@@ -27,14 +27,15 @@ This is my project where I explore the "Life Expectancy Data.csv" dataset to und
 
 ### For the Analysis Notebook:
 1. Put `Life Expectancy Data.csv` in the project folder
-2. Open `life_expectancy_analysis.ipynb` in Jupyter
-3. Run each cell to see what I found
+2. Open `data_wrangling.ipynb` in Jupyter
+3. Run each cell to clean the data.
+4. Open the `exploratory_analysis.ipynb` in Jupyter and run the cells to see what i found out
 
 ### For the Interactive Dashboard:
 1. Install everything first (see below)
 2. In your terminal, type:
    ```bash
-   streamlit run life_expectancy_dashboard.py
+   streamlit run eda_app.py
    ```
 3. Your browser should open automatically - if not, go to http://localhost:8501
 
