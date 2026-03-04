@@ -25,7 +25,7 @@ Play around with the filters on the left - that's where all the action starts.
 @st.cache_data
 def load_data():
     # had some issues with file paths initially
-    data = pd.read_csv('cleaned_data.csv')
+    data = pd.read_csv('data/cleaned_data.csv')
     return data
 
 try:
