@@ -30,7 +30,7 @@ def load_data():
 
 try:
     data = load_data()
-    st.success("Data loaded - finally got it working!")
+    st.success("Data loaded successfully !")
 except FileNotFoundError:
     st.error("Can't find the cleaned_data.csv file. Make sure it's in the right folder.")
     st.stop()
@@ -115,7 +115,7 @@ with tab1:
         # my thoughts on missing data
         st.info("Hmm, quite a few missing values in some columns. Going to need to think about how to handle these for any modeling. Population and GDP have the most gaps - not surprising since poorer countries might not report consistently.")
     else:
-        st.success("No missing values - that's rare!")
+        st.success("No missing values - that's because I'm I already cleaned it using the data wrangling notebook!")
     
     # Dataset shape and basic info
     col1, col2 = st.columns(2)
@@ -206,7 +206,7 @@ with tab2:
         st.markdown("""
         **Interesting:** Adult mortality has a long tail - some countries have rates that are 
         shockingly high. The box plot shows quite a few outliers. Probably related to HIV/AIDS 
-        in some African countries.
+        in some African countries (Just a thought though).
         """)
 
 with tab3:
